@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0D0D0D" />
+  <meta name="description" content="SOLE SOCIETY — концептуальный интернет-магазин кроссовок: running, lifestyle, basketball, classic. Демонстрационный проект." />
+  <title>SOLE SOCIETY — не просто кроссовки</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230D0D0D'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='700' fill='%23C8F04B' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= SVG-СПРАЙТ ================= -->
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.2-4.2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.4C7.6 17.6 4 14.7 4 10.9A4.4 4.4 0 0 1 12 8.3a4.4 4.4 0 0 1 8 2.6c0 3.8-3.6 6.7-8 9.5Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8Z"/><path d="M9 8V6.2A3 3 0 0 1 15 6.2V8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17.5 7H20M4 17h4M12.5 17H20"/><circle cx="15.2" cy="7" r="2.2"/><circle cx="10.2" cy="17" r="2.2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.8 4.4 4.4L19 6.6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.8h5V7M6.5 7l1 13h9l1-13"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M9.5 7H17v7.5"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.8 6.8h10.4v9.4H2.8z"/><path d="M13.2 10h3.6l3.4 3.2v3H13.2z"/><circle cx="7" cy="18.4" r="1.9"/><circle cx="17" cy="18.4" r="1.9"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M4.2 12a7.8 7.8 0 0 1 13.3-5.5l2.3 2.1"/><path d="M20 4.6v4.6h-4.6"/><path d="M19.8 12a7.8 7.8 0 0 1-13.3 5.5l-2.3-2.1"/><path d="M4 19.4v-4.6h4.6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.2 19 6v6c0 4.4-3 7.6-7 8.8-4-1.2-7-4.4-7-8.8V6l7-2.8Z"/><path d="m9.2 12 2 2 3.8-4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 14.6a2.2 2.2 0 0 1-2.2 2.2H9.4L4.6 21V6.6a2.2 2.2 0 0 1 2.2-2.2h11A2.2 2.2 0 0 1 20 6.6v8Z"/><path d="M8.6 10.2h6.8M8.6 13.4h4.4"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/><path d="M16.9 7.1h.01"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="m20.6 5.2-2.8 13.2-5.6-4.2-2.6 2.6-.5-4.2 8.6-6.4-10 5.3-3.7-1.4 16.6-4.9Z"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="m11 9.6 4 2.4-4 2.4z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.4 13.9 9l5.6 1.9-5.6 1.9L12 18.4 10.1 12.8 4.5 10.9 10.1 9 12 3.4Z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- ================= ВЕРХНЯЯ ПОЛОСА ================= -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__text">
+        <span class="topbar__dot" aria-hidden="true"></span>
+        Бесплатная доставка при заказе от 10 000 ₽
+      </p>
+      <p class="topbar__note">Демонстрационный проект · оплата не производится</p>
+    </div>
+  </div>
+
+  <!-- ================= ШАПКА ================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#home" aria-label="SOLE SOCIETY — на главную">
+        <span class="logo__mark" aria-hidden="true">S</span>
+        <span class="logo__text">Sole<span>Society</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#home">Главная</a></li>
+          <li><a class="nav__link" href="#catalog">Каталог</a></li>
+          <li><a class="nav__link" href="#catalog" data-jump="new">Новинки</a></li>
+          <li><a class="nav__link" href="#about">О бренде</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" type="button" id="searchToggle" aria-expanded="false" aria-controls="searchPanel" aria-label="Открыть поиск">
+          <svg class="icon"><use href="#i-search"></use></svg>
+        </button>
+
+        <button class="icon-btn icon-btn--count" type="button" data-open-favorites aria-label="Открыть избранное">
+          <svg class="icon"><use href="#i-heart"></use></svg>
+          <span class="counter" data-fav-counter hidden>0</span>
+        </button>
+
+        <button class="cart-btn" type="button" data-open-cart aria-label="Открыть корзину">
+          <svg class="icon"><use href="#i-bag"></use></svg>
+          <span class="cart-btn__label">
+            <span class="cart-btn__sum" data-cart-total>0 ₽</span>
+            <span class="cart-btn__meta"><span data-cart-counter>0</span> поз.</span>
+          </span>
+          <span class="counter counter--cart" data-cart-badge hidden>0</span>
+        </button>
+
+        <button class="icon-btn burger" type="button" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+          <svg class="icon"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Панель поиска -->
+    <div class="search-panel" id="searchPanel" hidden>
+      <div class="container search-panel__inner">
+        <div class="search-panel__field">
+          <svg class="icon search-panel__icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="search-panel__input" id="searchInput" type="search" placeholder="Найти модель или категорию…" autocomplete="off" aria-label="Поиск по каталогу" aria-controls="searchResults" />
+          <button class="icon-btn search-panel__clear" type="button" id="searchClear" aria-label="Очистить поиск" hidden>
+            <svg class="icon"><use href="#i-close"></use></svg>
+          </button>
+        </div>
+        <div class="search-results" id="searchResults" role="listbox" aria-label="Результаты поиска"></div>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="#home">Главная</a></li>
+          <li><a class="mobile-menu__link" href="#catalog">Каталог</a></li>
+          <li><a class="mobile-menu__link" href="#catalog" data-jump="new">Новинки</a></li>
+          <li><a class="mobile-menu__link" href="#about">О бренде</a></li>
+        </ul>
+        <div class="mobile-menu__foot">
+          <button class="btn btn--dark btn--block" type="button" data-open-favorites>Избранное</button>
+          <button class="btn btn--outline btn--block" type="button" data-open-cart>Корзина</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="eyebrow"><svg class="icon"><use href="#i-spark"></use></svg> Коллекция 2026 · Drop 01</p>
+          <h1 class="hero__title">
+            Не просто<br />
+            кроссовки.<br />
+            <span class="hero__accent">Твой характер.</span>
+          </h1>
+          <p class="hero__subtitle">Выбирай силуэт. Создавай свой стиль. Двигайся по-своему.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--dark btn--lg" href="#catalog">
+              Смотреть коллекцию
+              <svg class="icon"><use href="#i-arrow"></use></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#about">О бренде</a>
+          </div>
+
+          <dl class="hero__stats">
+            <div class="hero__stat"><dt>Моделей</dt><dd>14</dd></div>
+            <div class="hero__stat"><dt>Категорий</dt><dd>4</dd></div>
+            <div class="hero__stat"><dt>Размеры</dt><dd>36–47</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__media reveal">
+          <div class="hero__image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+              alt="Кроссовки SOLE SOCIETY из новой коллекции на контрастном фоне"
+              width="1000" height="1200" data-fallback="Aeroflux Glide Pro" />
+          </div>
+          <div class="hero__tag hero__tag--price">
+            <span class="hero__tag-label">Хит дропа</span>
+            <span class="hero__tag-value">Aeroflux Glide Pro</span>
+            <span class="hero__tag-price">24 900 ₽</span>
+          </div>
+          <div class="hero__tag hero__tag--badge">
+            <svg class="icon"><use href="#i-truck"></use></svg>
+            <span>Доставка 1–3 дня</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= БЕГУЩАЯ СТРОКА ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Новый дроп</span><span class="marquee__sep">✳</span>
+        <span>Sole Society</span><span class="marquee__sep">✳</span>
+        <span>Running</span><span class="marquee__sep">✳</span>
+        <span>Lifestyle</span><span class="marquee__sep">✳</span>
+        <span>Basketball</span><span class="marquee__sep">✳</span>
+        <span>Classic</span><span class="marquee__sep">✳</span>
+        <span>Новый дроп</span><span class="marquee__sep">✳</span>
+        <span>Sole Society</span><span class="marquee__sep">✳</span>
+        <span>Running</span><span class="marquee__sep">✳</span>
+        <span>Lifestyle</span><span class="marquee__sep">✳</span>
+        <span>Basketball</span><span class="marquee__sep">✳</span>
+        <span>Classic</span><span class="marquee__sep">✳</span>
+      </div>
+    </div>
+
+    <!-- ================= КАТЕГОРИИ ================= -->
+    <section class="section categories" id="categories">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Направления</p>
+            <h2 class="section__title">Выбери свою категорию</h2>
+          </div>
+          <p class="section__lead">Четыре направления, один подход: комфорт, характер и внимание к деталям.</p>
+        </div>
+
+        <div class="categories__grid">
+          <button class="category reveal" type="button" data-category-jump="running">
+            <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?auto=format&fit=crop&w=700&q=80" alt="Категория Running — беговые кроссовки" loading="lazy" width="700" height="900" data-fallback="Running" />
+            <span class="category__overlay" aria-hidden="true"></span>
+            <span class="category__content">
+              <span class="category__name">Running</span>
+              <span class="category__count">5 моделей</span>
+            </span>
+            <span class="category__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"></use></svg></span>
+          </button>
+
+          <button class="category reveal" type="button" data-category-jump="lifestyle">
+            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80" alt="Категория Lifestyle — повседневные кроссовки" loading="lazy" width="700" height="900" data-fallback="Lifestyle" />
+            <span class="category__overlay" aria-hidden="true"></span>
+            <span class="category__content">
+              <span class="category__name">Lifestyle</span>
+              <span class="category__count">3 модели</span>
+            </span>
+            <span class="category__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"></use></svg></span>
+          </button>
+
+          <button class="category reveal" type="button" data-category-jump="basketball">
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=700&q=80" alt="Категория Basketball — баскетбольные кроссовки" loading="lazy" width="700" height="900" data-fallback="Basketball" />
+            <span class="category__overlay" aria-hidden="true"></span>
+            <span class="category__content">
+              <span class="category__name">Basketball</span>
+              <span class="category__count">3 модели</span>
+            </span>
+            <span class="category__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"></use></svg></span>
+          </button>
+
+          <button class="category reveal" type="button" data-category-jump="classic">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80" alt="Категория Classic — классические кроссовки" loading="lazy" width="700" height="900" data-fallback="Classic" />
+            <span class="category__overlay" aria-hidden="true"></span>
+            <span class="category__content">
+              <span class="category__name">Classic</span>
+              <span class="category__count">3 модели</span>
+            </span>
+            <span class="category__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"></use></svg></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= КАТАЛОГ ================= -->
+    <section class="section catalog" id="catalog">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Каталог</p>
+            <h2 class="section__title">Все модели</h2>
+          </div>
+          <p class="section__lead">Все товары вымышленные и созданы для демонстрации интерфейса.</p>
+        </div>
+
+        <div class="catalog__layout">
+          <!-- ФИЛЬТРЫ -->
+          <aside class="filters" id="filters" aria-label="Фильтры каталога">
+            <div class="filters__head">
+              <h3 class="filters__title">Фильтры</h3>
+              <button class="icon-btn filters__close" type="button" data-close-filters aria-label="Закрыть фильтры">
+                <svg class="icon"><use href="#i-close"></use></svg>
+              </button>
+            </div>
+
+            <div class="filters__group">
+              <label class="filters__label" for="filterName">Поиск по названию</label>
+              <input class="field" id="filterName" type="search" placeholder="Например, Glide" autocomplete="off" />
+            </div>
+
+            <div class="filters__group" role="group" aria-label="Категория">
+              <p class="filters__label">Категория</p>
+              <div class="chips" data-filter-category>
+                <button class="chip is-active" type="button" data-category="all">Все</button>
+                <button class="chip" type="button" data-category="running">Running</button>
+                <button class="chip" type="button" data-category="lifestyle">Lifestyle</button>
+                <button class="chip" type="button" data-category="basketball">Basketball</button>
+                <button class="chip" type="button" data-category="classic">Classic</button>
+              </div>
+            </div>
+
+            <div class="filters__group">
+              <p class="filters__label">Цена, ₽</p>
+              <div class="filters__row">
+                <input class="field" id="filterMin" type="number" min="0" step="500" placeholder="от" inputmode="numeric" aria-label="Минимальная цена" />
+                <input class="field" id="filterMax" type="number" min="0" step="500" placeholder="до" inputmode="numeric" aria-label="Максимальная цена" />
+              </div>
+            </div>
+
+            <div class="filters__group" role="group" aria-label="Размер обуви">
+              <p class="filters__label">Размер (EU)</p>
+              <div class="chips chips--sizes" data-filter-sizes></div>
+            </div>
+
+            <div class="filters__group">
+              <label class="switch">
+                <input type="checkbox" id="filterSale" />
+                <span class="switch__box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                <span class="switch__text">Только со скидкой</span>
+              </label>
+            </div>
+
+            <button class="btn btn--ghost btn--block" type="button" id="resetFilters">Сбросить фильтры</button>
+          </aside>
+
+          <!-- ТОВАРЫ -->
+          <div class="catalog__main">
+            <div class="catalog__toolbar">
+              <button class="btn btn--outline filters-toggle" type="button" data-open-filters>
+                <svg class="icon"><use href="#i-sliders"></use></svg>
+                Фильтры
+                <span class="filters-toggle__badge" data-active-filters hidden>0</span>
+              </button>
+
+              <p class="catalog__count" data-count aria-live="polite">Загрузка…</p>
+
+              <label class="sort">
+                <span class="sort__label">Сортировка</span>
+                <span class="sort__wrap">
+                  <select class="sort__select" id="sortSelect" aria-label="Сортировка товаров">
+                    <option value="popular">Сначала популярные</option>
+                    <option value="price-asc">Сначала дешёвые</option>
+                    <option value="price-desc">Сначала дорогие</option>
+                    <option value="new">Сначала новые</option>
+                    <option value="name">По названию</option>
+                  </select>
+                </span>
+              </label>
+            </div>
+
+            <div class="grid" id="productGrid"></div>
+
+            <div class="empty" id="catalogEmpty" hidden>
+              <span class="empty__icon" aria-hidden="true"><svg class="icon"><use href="#i-search"></use></svg></span>
+              <h3 class="empty__title">Ничего не найдено</h3>
+              <p class="empty__text">Попробуйте изменить параметры фильтров или сбросить их.</p>
+              <button class="btn btn--dark" type="button" id="emptyReset">Сбросить фильтры</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= О БРЕНДЕ ================= -->
+    <section class="section about" id="about">
+      <div class="container about__inner">
+        <div class="about__media reveal">
+          <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=900&q=80" alt="Атмосфера мастерской SOLE SOCIETY" loading="lazy" width="900" height="1000" data-fallback="SOLE SOCIETY" />
+          <div class="about__media-tag">
+            <span class="about__media-num">01</span>
+            <span class="about__media-text">Культура улиц<br />в каждой паре</span>
+          </div>
+        </div>
+
+        <div class="about__content reveal">
+          <p class="eyebrow">О бренде</p>
+          <h2 class="section__title">Мы собираем культуру,<br />а не просто полки</h2>
+          <p class="about__text">
+            SOLE SOCIETY начался с простой идеи: кроссовки — это не товар, а способ сказать о себе без слов.
+            Мы отбираем силуэты, в которых дизайн встречается с комфортом, а характер — с повседневностью.
+          </p>
+          <p class="about__text">
+            Наша философия — индивидуальность, честный дизайн и уважение к культуре уличной обуви.
+            Каждая модель в подборке — это отдельная история о движении, городе и людях, которые его создают.
+          </p>
+
+          <ul class="about__list">
+            <li><svg class="icon"><use href="#i-check"></use></svg> Кураторская подборка силуэтов</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> Фокус на комфорт и посадку</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg> Дизайн, который живёт дольше сезона</li>
+          </ul>
+
+          <a class="btn btn--dark btn--lg" href="#catalog">
+            Перейти в каталог
+            <svg class="icon"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ПРЕИМУЩЕСТВА ================= -->
+    <section class="section advantages">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Сервис</p>
+            <h2 class="section__title">Как это работает</h2>
+          </div>
+          <p class="section__lead">Условия ниже — демонстрационные и не являются реальными обязательствами магазина.</p>
+        </div>
+
+        <div class="advantages__grid">
+          <article class="advantage reveal">
+            <span class="advantage__icon"><svg class="icon"><use href="#i-chat"></use></svg></span>
+            <h3 class="advantage__title">Поддержка покупателей</h3>
+            <p class="advantage__text">Поможем с выбором размера и модели — консультация в демонстрационном режиме.</p>
+          </article>
+
+          <article class="advantage reveal">
+            <span class="advantage__icon"><svg class="icon"><use href="#i-refresh"></use></svg></span>
+            <h3 class="advantage__title">Удобный возврат</h3>
+            <p class="advantage__text">Понятный и прозрачный процесс возврата без лишних условий и вопросов.</p>
+          </article>
+
+          <article class="advantage reveal">
+            <span class="advantage__icon"><svg class="icon"><use href="#i-shield"></use></svg></span>
+            <h3 class="advantage__title">Контроль качества</h3>
+            <p class="advantage__text">Каждая пара проходит проверку перед отправкой — от швов до подошвы.</p>
+          </article>
+
+          <article class="advantage reveal">
+            <span class="advantage__icon"><svg class="icon"><use href="#i-truck"></use></svg></span>
+            <h3 class="advantage__title">Надёжная доставка</h3>
+            <p class="advantage__text">Отправляем по всей стране и бережно упаковываем каждую коробку.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= ПОДВАЛ ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="logo logo--light" href="#home" aria-label="SOLE SOCIETY — на главную">
+          <span class="logo__mark" aria-hidden="true">S</span>
+          <span class="logo__text">Sole<span>Society</span></span>
+        </a>
+        <p class="footer__text">
+          Концептуальный интернет-магазин кроссовок. Все товары, бренды и цены вымышлены
+          и созданы исключительно для демонстрации интерфейса.
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Навигация в подвале">
+        <h3 class="footer__title">Магазин</h3>
+        <ul class="footer__list">
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#catalog" data-jump="new">Новинки</a></li>
+          <li><a href="#about">О бренде</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__nav">
+        <h3 class="footer__title">Контакты</h3>
+        <ul class="footer__list">
+          <li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+          <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+          <li><span>Москва, ул. Демонстрационная, 1</span></li>
+          <li><span>Ежедневно, 10:00–21:00</span></li>
+        </ul>
+      </div>
+
+      <div class="footer__nav">
+        <h3 class="footer__title">Соцсети</h3>
+        <ul class="footer__socials">
+          <li><a href="#home" aria-label="Instagram (демо-ссылка)"><svg class="icon"><use href="#i-instagram"></use></svg></a></li>
+          <li><a href="#home" aria-label="Telegram (демо-ссылка)"><svg class="icon"><use href="#i-telegram"></use></svg></a></li>
+          <li><a href="#home" aria-label="YouTube (демо-ссылка)"><svg class="icon"><use href="#i-youtube"></use></svg></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="footerYear">2026</span> SOLE SOCIETY. Концептуальный проект.</p>
+      <p>Сделано на чистом HTML, CSS и JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- ================= ОВЕРЛЕЙ ================= -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <!-- ================= КОРЗИНА ================= -->
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <header class="drawer__head">
+      <div>
+        <h2 class="drawer__title" id="cartTitle">Корзина</h2>
+        <p class="drawer__subtitle"><span data-cart-counter>0</span> позиции</p>
+      </div>
+      <button class="icon-btn" type="button" data-close-cart aria-label="Закрыть корзину">
+        <svg class="icon"><use href="#i-close"></use></svg>
+      </button>
+    </header>
+
+    <div class="drawer__body" id="cartBody"></div>
+
+    <footer class="drawer__foot" id="cartFoot" hidden>
+      <dl class="summary">
+        <div class="summary__row"><dt>Товары</dt><dd data-cart-subtotal>0 ₽</dd></div>
+        <div class="summary__row"><dt>Доставка</dt><dd data-cart-delivery>0 ₽</dd></div>
+        <div class="summary__row summary__row--total"><dt>Итого</dt><dd data-cart-grand>0 ₽</dd></div>
+      </dl>
+      <button class="btn btn--accent btn--block btn--lg" type="button" id="checkoutBtn">
+        Оформить заказ
+        <svg class="icon"><use href="#i-arrow"></use></svg>
+      </button>
+      <button class="btn btn--ghost btn--block" type="button" id="clearCartBtn">Очистить корзину</button>
+    </footer>
+  </aside>
+
+  <!-- ================= ИЗБРАННОЕ ================= -->
+  <aside class="drawer" id="favDrawer" role="dialog" aria-modal="true" aria-labelledby="favTitle" aria-hidden="true">
+    <header class="drawer__head">
+      <div>
+        <h2 class="drawer__title" id="favTitle">Избранное</h2>
+        <p class="drawer__subtitle"><span data-fav-counter>0</span> товаров</p>
+      </div>
+      <button class="icon-btn" type="button" data-close-favorites aria-label="Закрыть избранное">
+        <svg class="icon"><use href="#i-close"></use></svg>
+      </button>
+    </header>
+    <div class="drawer__body" id="favBody"></div>
+  </aside>
+
+  <!-- ================= МОДАЛКА ТОВАРА ================= -->
+  <div class="modal-root" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" aria-hidden="true">
+    <div class="modal-root__backdrop" data-close-modal></div>
+    <div class="modal modal--product">
+      <button class="modal__close" type="button" data-close-modal aria-label="Закрыть карточку товара">
+        <svg class="icon"><use href="#i-close"></use></svg>
+      </button>
+      <div class="modal__scroll" id="productModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ================= МОДАЛКА ОФОРМЛЕНИЯ ================= -->
+  <div class="modal-root" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="modal-root__backdrop" data-close-modal></div>
+    <div class="modal modal--checkout">
+      <button class="modal__close" type="button" data-close-modal aria-label="Закрыть оформление заказа">
+        <svg class="icon"><use href="#i-close"></use></svg>
+      </button>
+      <div class="modal__scroll" id="checkoutContent"></div>
+    </div>
+  </div>
+
+  <!-- ================= УВЕДОМЛЕНИЯ ================= -->
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
